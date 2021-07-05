@@ -1,0 +1,39 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import time
+import os
+from threading import Thread
+
+def ris(x,y):
+    plt.plot(x, y)
+    plt.show()
+    plt.cla()
+
+
+
+def read(name):
+    a=open(name,'r') #открываем файл
+    list_strok = a.readlines() #читаем все строки
+    list_chisel = [float(x.replace('\n','')) for x in list_strok]
+    N = 100
+
+    x=[]
+    y=[]
+    for i in range(len(list_chisel)):
+        if(i%2==1):
+            y.append(list_chisel[i])
+        else:
+            x.append(list_chisel[i])
+    for i in range(int((len(list_chisel)/2)/N)):
+        if(i%30==0):
+            b = y[i*N:N*(i+1)]
+            c = x[i*N:N*(i+1)]
+            ris(c,b)
+
+
+
+df = read('D:/Никита/Загрузки/V.txt')
+#df = read('D:/Никита/Загрузки/T.txt')
+
+
+
