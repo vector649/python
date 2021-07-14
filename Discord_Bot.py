@@ -6,7 +6,7 @@ intents = discord.Intents.default()
 intents.members = True
 
 
-token = 'ODY0ODQ3MjI4MTM3MjQyNjQ1.YO7Zvw.tkhAuCR1jGGgzHpaPDljdbu45GM'
+token = 'ODY0ODQ3MjI4MTM3MjQyNjQ1.YO7Zvw.0NMDlzjVPvQIztRGpe0N1g7DLdM'
 
 bot = commands.Bot(command_prefix=('!'),intents=intents)
 
